@@ -9,11 +9,13 @@ import {
 
 const Home = () => {
   const dispatch = useDispatch();
+  const movieText = "Harry";
+  const showText = "Friends";
 
   // Fetch from api
   useEffect(() => {
-    dispatch(fetchAsyncMovies());
-    dispatch(fetchAsyncShows());
+    dispatch(fetchAsyncMovies(movieText));
+    dispatch(fetchAsyncShows(showText));
   }, [dispatch]);
 
   return (

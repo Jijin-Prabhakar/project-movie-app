@@ -1,6 +1,9 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import { getAllMovies, getAllShows } from "../../features/movies/movieSlice";
+import Slider from "react-slick";
+import { settings } from "../../common/settings";
+
 import MovieCard from "../MovieCard/MovieCard";
 import "./MovieListing.scss";
 
@@ -42,11 +45,15 @@ const MovieListing = () => {
     <div className="movie-wrapper">
       <div className="movie-list">
         <h2>Movies</h2>
-        <div className="movie-container">{renderMovies}</div>
+        <div className="movie-container">
+          <Slider {...settings}>{renderMovies}</Slider>
+        </div>
       </div>
       <div className="show-list">
         <h2>Shows</h2>
-        <div className="movie-container">{renderShows}</div>
+        <div className="movie-container">
+          <Slider {...settings}>{renderShows}</Slider>
+        </div>
       </div>
     </div>
   );
